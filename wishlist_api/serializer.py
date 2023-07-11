@@ -1,17 +1,18 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import Wish, List, Usuario
+from django.contrib.auth.models import User
 
-class UsuarioSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = ['id', 'user', 'cover_image', 'joined_in']
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+        fields = ('id', 'username', 'first_name', 'last_name', 'date_joined')
 
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ('id','user', 'cover_image', 'joined_in')
 class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = List

@@ -39,6 +39,8 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     serializer_class = UsuarioSerializer
     permission_classes = [AllowAny]
 
+    
+
 class WishViewSet(viewsets.ModelViewSet):
     queryset = Wish.objects.all()
     serializer_class = WishSerializer
