@@ -55,6 +55,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost",
+    "http://http://127.0.0.1/"
+]
+
 
 TEMPLATES = [
     {
